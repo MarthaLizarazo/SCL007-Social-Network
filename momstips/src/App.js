@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'; // provide hace disponible a redux en to
 
 import Usuarios from './Components/Usuarios/Usuarios';
 import NuevoPost from './Components/Usuarios/NuevoPost';
-import EditarPost from './Components/Usuarios/EditarPost';
+// import EditarPost from './Components/Usuarios/EditarPost';
 
 import Navbar from './Components/Navbar';
 

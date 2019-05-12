@@ -14,7 +14,7 @@ const firebaseConfig = {
   projectId: 'moms-tips',
   storageBucket: 'moms-tips.appspot.com',
   messagingSenderId: '903574016930',
-  appId: '1:903574016930:web:80c1d1af6f101121'
+  appId: '1:903574016930:web:04caa8b7dfd87fb7'
 };
 
 // inicializar firebase
@@ -50,10 +50,8 @@ const store = createStoreWithFirebase(
   initialState,
   compose(
     reactReduxFirebase(firebase),
-    // window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
-    (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
-      compose
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    //(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) || compose
   )
 );
 export default store;
