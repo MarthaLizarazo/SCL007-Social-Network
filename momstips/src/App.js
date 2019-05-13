@@ -7,7 +7,7 @@ import Usuarios from './Components/Usuarios/Usuarios';
 import NuevoPost from './Components/Usuarios/NuevoPost';
 // import EditarPost from './Components/Usuarios/EditarPost';
 
-import Navbar from './Components/Navbar';
+import Navbar from './Components/Diseño/Navbar';
 
 function App() {
   return (
