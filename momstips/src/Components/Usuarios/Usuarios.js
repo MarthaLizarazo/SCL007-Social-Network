@@ -18,7 +18,12 @@ const Usuarios = ({ usuario, firestore }) => {
 
   return (
     <div className="row">
-      <div className="col-md-12 mb-4">{/* Agregar nuevos amigos */}</div>
+      <div className="col-md-12 mb-4">
+        <Link to="/Usuarios/nuevo" className="btn btn-primary">
+          <i className="fas fa-plus"> </i> {''}
+          Nuevo Post
+        </Link>
+      </div>
       <div className="col-md-8">
         <h2>
           <i className="icon fab fa-weixin"> </i> Chat
@@ -28,16 +33,17 @@ const Usuarios = ({ usuario, firestore }) => {
         <thead className="text-light bg-primary">
           <tr>
             <th>Foto</th>
-            <th>Amigo</th>
             <th>Comentario</th>
+            <th> ... </th>
           </tr>
         </thead>
 
         <tbody>
           {usuario.map(friend => (
             <tr key={friend.id}>
-              <td>{friend.foto}</td>
-              <td>{friend.nombre}</td>
+              <td>
+                {friend.foto} {friend.nombre}
+              </td>
               <td>{friend.comentario}</td>
               <td>
                 <button

@@ -16,8 +16,8 @@ function App() {
         <Navbar />
         <div className="container">
           <Switch>
-            <Route exact path="/usuarios" component={Usuarios} />
-            <Route exact path="/usuarios/nuevo" component={NuevoPost} />
+            <Route exact path="/Usuarios" component={Usuarios} />
+            <Route exact path="/Usuarios/nuevo" component={NuevoPost} />
           </Switch>
         </div>
       </Router>
