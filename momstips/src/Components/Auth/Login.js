@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import logoMoms from './logoMoms.jpg';
+
+import '../Auth/Login.css';
 
 class Login extends Component {
   state = {
@@ -9,8 +12,9 @@ class Login extends Component {
     return (
       <div className="row justify-content-center">
         <div className="col-md-5">
-          <div className="col-mt-5">
-            <div className="card-body">
+          <div className="card mt-5">
+            <div className="card-body text-center">
+              <img src={logoMoms} className="logo" />
               <h2 className="text-center py-4">
                 <i className="fas fa-lock"> </i> Inicio de Sesión
               </h2>
@@ -40,7 +44,7 @@ class Login extends Component {
                 </div>
                 <input
                   type="submit"
-                  className="btn btn-succes btn-block"
+                  className="btn btn-succes btn-secondary btn-block"
                   value="Iniciar Sesión"
                 />
               </form>
