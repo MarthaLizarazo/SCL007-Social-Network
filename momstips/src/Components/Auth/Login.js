@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { firebaseConnect } from 'react-redux-firebase';
+
 import logoMoms from './logoMoms.jpg';
 
 import '../Auth/Login.css';
@@ -8,6 +10,33 @@ class Login extends Component {
     email: '',
     password: ''
   };
+
+  //Iniciar Sesion en Firebase
+  iniciarSesion = event => {
+    event.preventDefault();
+
+    // extraemos Firebase
+    const { firebase } = this.props;
+
+    // extraemos el state para comparar
+    const { email, password } = this.state;
+
+    // autenticar usuario, usando el metodo de firebase (login)
+    firebase
+      .login({
+        email,
+        password
+      })
+      .then(resolve => console.log('Iniciaste Sesión'))
+      .catch(reject => console.log('Hubo un error'));
+  };
+
+  leerDatos = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="row justify-content-center">
@@ -18,11 +47,11 @@ class Login extends Component {
               <h2 className="text-center py-4">
                 <i className="fas fa-lock"> </i> Inicio de Sesión
               </h2>
-              <form>
+              <form onSubmit={this.iniciarSesion}>
                 <div className="form-group">
                   <label>Email:</label>
                   <input
-                    type="text"
+                    type="email"
                     className="form-control"
                     name="email"
                     required
@@ -44,7 +73,7 @@ class Login extends Component {
                 </div>
                 <input
                   type="submit"
-                  className="btn btn-succes btn-secondary btn-block"
+                  className="btn btn-succes btn-success btn-block"
                   value="Iniciar Sesión"
                 />
               </form>
@@ -56,4 +85,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default firebaseConnect()(Login);

@@ -1,4 +1,5 @@
 import React from 'react';
+import logoMoms from './momsTips01.png';
 
 import { Link } from 'react-router-dom';
 
@@ -6,7 +7,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-secondary mb-5">
       <nav className="navbar navvbar-light">
-        <span className="navbar-brand mb-0 h1">Moms' Tips</span>
+        <img src={logoMoms} className="logoNavbar" />
+        <span className="navbar-brand mb-0 h1"> Moms' Tips</span>
       </nav>
       <button
         className="navbar-toggler"

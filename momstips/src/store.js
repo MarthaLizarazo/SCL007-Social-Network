@@ -2,6 +2,7 @@ import { createStore, combineReducers, compose } from 'redux';
 import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
 import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 import firebase from 'firebase/app';
+import 'firebase/auth'; // habilitando toda la Auth de Firebase en la App
 import 'firebase/firestore';
 
 // Boilerplate neceasario para integrar firestore en el proyecto
