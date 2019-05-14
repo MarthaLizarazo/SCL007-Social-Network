@@ -7,6 +7,7 @@ import Usuarios from './Components/Usuarios/Usuarios';
 import NuevoPost from './Components/Usuarios/NuevoPost';
 // import EditarPost from './Components/Usuarios/EditarPost';
 
+import Login from './Components/Auth/Login';
 import Navbar from './Components/Diseño/Navbar';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Switch>
             <Route exact path="/Usuarios" component={Usuarios} />
             <Route exact path="/Usuarios/nuevo" component={NuevoPost} />
+            <Route exact path="/login" component={Login} />
           </Switch>
         </div>
       </Router>
