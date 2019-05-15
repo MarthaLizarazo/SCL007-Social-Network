@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { firebaseConnect } from 'react-redux-firebase';
 
 import logoMoms from './logoMoms.jpg';
-
 import '../Auth/Login.css';
+
+import PropsTypes from 'prop-types'; // para Documentarlo
 
 class Login extends Component {
   state = {
@@ -45,7 +46,7 @@ class Login extends Component {
             <div className="card-body text-center">
               <img src={logoMoms} className="logo" />
               <h2 className="text-center py-4">
-                <i className="fas fa-lock"> </i> Inicio de Sesión
+                <i className="far fa-id-card"> </i> Inicio de Sesión
               </h2>
               <form onSubmit={this.iniciarSesion}>
                 <div className="form-group">
@@ -84,5 +85,8 @@ class Login extends Component {
     );
   }
 }
+Login.propTypes = {
+  firebase: PropsTypes.object.isRequired
+};
 
 export default firebaseConnect()(Login);
